@@ -15,6 +15,26 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto"
       rel="stylesheet"
     />
+    <style>
+      .float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0C9;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.my-float {
+  margin-top: 22px;
+}
+
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light text-capitalize">
@@ -69,6 +89,12 @@
           </ul>
         </div>
       </div>
+                <!-- Call Us Button -->
+          <!-- <div class="callus" id="callus">
+            <a href="tel:61 488 900 468" class="call-us-btn">
+              <i class="fas fa-phone"></i>
+            </a>
+          </div> -->
     </nav>
 
     <header id="home">
@@ -86,12 +112,17 @@
           </div>
         </div>
       </div>
+      <a href="tel:123-456-7890" class="float" target="_blank">
+        <i class="fa fa-phone my-float"></i>
+      </a>
     </header>
 
     <div class="about-us" id="about">
       <div class="small-container">
-        <h2 class="text-center" style="padding-bottom: 15px;">Winter <span>Adventure</span></h2>
-        <p class="text-center" style="padding-bottom: 15px;">
+        <h2 class="text-center" style="padding-bottom: 15px">
+          Winter <span>Adventure</span>
+        </h2>
+        <p class="text-center" style="padding-bottom: 15px">
           Embark on a winter adventure like no other, surrounded by picturesque
           landscapes and cozy settings
         </p>
@@ -142,8 +173,10 @@
 
     <div class="services" id="service">
       <div class="container">
-        <h2 class="text-capitalize text-center" style="padding-bottom: 15px;">Explore <span>Short Trips</span></h2>
-        <p class="text-center" style="padding-bottom: 15px;">
+        <h2 class="text-capitalize text-center" style="padding-bottom: 15px">
+          Explore <span>Short Trips</span>
+        </h2>
+        <p class="text-center" style="padding-bottom: 15px">
           Experience unforgettable short trips packed with excitement and
           adventure, perfect for a quick getaway.
         </p>
@@ -200,26 +233,36 @@
 
     <!-- Plans -->
     <div class="plans" id="plans">
-        <div class="white-overlay">
-            <div class="container">
-                <h2 class="text-capitalize text-center" style="padding-bottom: 15px;">Exclusive <span>Winter Plans</span></h2>
-                <p class="text-center"  style="padding-bottom: 15px;">
-                    Embark on an unforgettable adventure to the breathtaking Snowy Mountains. Immerse yourself in the beauty of snow-covered landscapes, carve through exhilarating ski slopes, and unwind in the comfort of cozy mountain retreats.
-                </p>
-                <div class="containeer">
-                    <h2 class="title">Unlock Exclusive <br> Content</h2>
-                    <h3 class="price">$29<span>/month</span></h3>
-                    <p class="description">Gain exclusive access to our premium content library. Explore and enjoy high-quality videos on your preferred devices.</p>
-                    <b class="offer">Act fast! Offer ends on September 20, 2023.</b>
-                    <a class="subscribe-button" href="#">Subscribe Now</a>
-                    <div class="ribbon-wrap">
-                      <div class="ribbon">Special Offer!</div>
-                    </div>
-                  </div>
+      <div class="white-overlay">
+        <div class="container">
+          <h2 class="text-capitalize text-center" style="padding-bottom: 15px">
+            Exclusive <span>Winter Plans</span>
+          </h2>
+          <p class="text-center" style="padding-bottom: 15px">
+            Embark on an unforgettable adventure to the breathtaking Snowy
+            Mountains. Immerse yourself in the beauty of snow-covered
+            landscapes, carve through exhilarating ski slopes, and unwind in the
+            comfort of cozy mountain retreats.
+          </p>
+          <div class="containeer">
+            <h2 class="title">
+              Unlock Exclusive <br />
+              Content
+            </h2>
+            <h3 class="price">$29<span>/month</span></h3>
+            <p class="description">
+              Gain exclusive access to our premium content library. Explore and
+              enjoy high-quality videos on your preferred devices.
+            </p>
+            <b class="offer">Act fast! Offer ends on September 20, 2023.</b>
+            <a class="subscribe-button" href="#">Subscribe Now</a>
+            <div class="ribbon-wrap">
+              <div class="ribbon">Special Offer!</div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    
 
     <div class="statistics text-capitalize text-center font-weight-bold">
       <div class="container">
@@ -298,7 +341,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-12" style="padding-top: 20px;">
+          <div class="col-lg-4 col-md-6 col-12" style="padding-top: 20px">
             <div class="item">
               <h4 class="text-uppercase">newsletter</h4>
               <form>
@@ -320,36 +363,9 @@
         </p>
       </div>
     </footer>
-
+    <button class="book-now">Book Now</button>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-      $(function () {
-        "use strict";
-
-        var winH = $(window).height();
-
-        $("header").height(winH);
-
-        $("header .container > div").css(
-          "top",
-          winH / 2 - $("header .container > div").height() / 2
-        );
-
-        $(".navbar ul li a.search").on("click", function (e) {
-          e.preventDefault();
-        });
-        $(".navbar a.search").on("click", function () {
-          $(".navbar form").fadeToggle();
-        });
-
-        $(".navbar ul.navbar-nav li a").on("click", function (e) {
-          var getAttr = $(this).attr("href");
-
-          e.preventDefault();
-          $("html").animate({ scrollTop: $(getAttr).offset().top }, 1000);
-        });
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
