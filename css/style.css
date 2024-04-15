@@ -63,32 +63,24 @@ nav.navbar {
     font-family: 'Open Sans', sans-serif;
 }
 
-nav.navbar a, nav.navbar ul li a {
+nav.navbar a,
+nav.navbar ul li a {
     color: #FFF !important;
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    transition: color 0.3s !important; 
+}
+
+nav.navbar a:hover,
+nav.navbar ul li a:hover {
+    color: #bd8cbf !important; 
 }
 
 nav.navbar ul li {
     padding: 0 15px;
 }
 
-nav.navbar .search-container {
-    position: relative;
-}
-
-nav.navbar form {
-    padding: 5px;
-    background-color: white;
-    position: absolute;
-    width: 260px;
-    display: none;
-}
-
-nav.navbar form input {
-    padding: 5px 10px;
-    border: 1px solid #b7b5b5;
-    background-color: #e6e3e3;
-    width: 100%;
-}
 
 /* header */
 
@@ -113,9 +105,9 @@ header .container > div h1 {
 }
 
 header button {
-    background-color: transparent;
+    background-color: #bd8cbf;
     display: block;
-    border: 1px solid #FFF;
+    border: 1px solid #bd8cbf;
     border-radius: 50px;
     padding: 0;
     margin: 30px auto;
@@ -123,12 +115,13 @@ header button {
 
 header button a {
     padding: 10px 40px;
+    font-weight: bold;
     display: block;
     color: #FFF;
 }
 
 header button:hover {
-    background-color: #bd8cbf;
+    background-color: transparent;
     border: 1px solid #bd8cbf;
 }
 
@@ -150,13 +143,14 @@ header button:hover a {
 }
 
 .about-us .small-container > p + div {
-    padding: 70px 0;
+    padding: 150px 0;
     background-color: white;
     box-shadow: 5px 5px 10px #d2cfcf, -5px -5px 10px #d2cfcf;
 }
 
 .about-us .small-container > p + div h4 {
-    margin-bottom: 40px
+    margin-bottom: 40px;
+    font-weight:bold;
 }
 
 .about-us .small-container .text-right p {
@@ -168,6 +162,11 @@ header button:hover a {
 .about-us .small-container > p + div button {
     background-color: #bd8cbf;
     border: none;
+    transition: background-color 0.3s ease;
+}
+
+.about-us .small-container > p + div button:hover {
+    background-color: #a55b8d;
 }
 
 .about-us .small-container > p + div a {
@@ -189,7 +188,7 @@ header button:hover a {
 
 .about-us .item img {
     width: 100%;
-    height: 150px
+    height: 190px
 }
 
 .about-us .item h5 {
@@ -308,43 +307,85 @@ header button:hover a {
 }
 
 /* agency */
-
-.agency {
-    background-image: url('../imgs/agency.jpg');
+.plans {
     font-family: 'Open Sans', sans-serif;
     background-size: cover;
 }
 
-.agency .container > div {
-    margin: 0 auto;
-    width: 86%;
-    margin-bottom: 30px;
+.containeer {
+    width: 460px;
+    padding: 40px;
+    background: #ffffff;
+    text-align: center;
+    align-items: center;
+    
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
-
-.agency .white-overlay {
-   padding: 50px 0 20px;
+.containeer .title {
+    font-size: 2rem;
+    color: #333;
 }
-
-.agency .container > div > div {
+.containeer .price {
+    color: #bd8cbf;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 15px 0;
+}
+.containeer span {
+    font-size: 1.2rem;
+}
+.containeer .description {
+    color: #3b3b3b;
+    font-size: 1.1rem;
+    margin: 20px 0 20px;
+}
+.containeer .offer {
+    display: block;
+    color: #555;
+    font-size: 1rem;
+    margin-top: 25px;
+}
+.subscribe-button {
     display: inline-block;
-    position: relative
+    padding: 15px 0;
+    background: transparent;
+    color: #bd8cbf;
+    border: 1px solid #bd8cbf;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    width: 100%;
+    font-weight: 500;
+    transition: 0.2s ease;
 }
+.subscribe-button:hover {
+    color: #fff;
+    background-color: #bd8cbf;
 
-.agency .container > div > div img {
-    width: 500px;
-    margin: 0 20px;
 }
-
-.agency img:first-of-type, .agency img:last-of-type {
-    width: 200px;
-}
-
-.agency .container > div h2 {
+.ribbon-wrap {
+    width: 150px;
+    height: 150px;
     position: absolute;
-    color: white;
-    bottom: 105px;
-    left: 195px;
-    font-size: 40px;
+    top: -10px;
+    left: -10px;
+    pointer-events: none;
+}
+.ribbon {
+    width: 230px;
+    font-size: 0.918rem;
+    text-align: center;
+    padding: 8px 0;
+    background: #bd8cbf;
+    color: #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    right: -17px;
+    top: 29%;
 }
 
 /* statistics */
@@ -413,7 +454,14 @@ header button:hover a {
     color: white;
     margin: 0 auto;
     display: block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+.contact form input[type="submit"]:hover {
+    background-color: #d62bcf; 
+}
+
 
 /* footer */
 
@@ -429,6 +477,20 @@ footer {
 
 footer a:hover {
     color: #bd8cbf
+}
+
+footer .row {
+    display: flex;
+    justify-content: center;
+}
+
+footer .item ul {
+    list-style: none; 
+    padding-left: 0; 
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px; 
 }
 
 footer .container > ul {
@@ -484,9 +546,14 @@ footer .item form input[type="submit"] {
     border: none;
     float: right;
     color: #FFF;
-    padding: 0
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
 }
 
+footer .item form input[type="submit"]:hover {
+background-color: #d62bcf; 
+}
 footer .copyright {
     background-color: #59355b;
     padding: 15px 0;
@@ -513,7 +580,7 @@ footer .copyright p {
         width: 150px
     }
     .about-us .item img {
-        height: 125px
+        height: 135px
     }
     .about-us .item:first-of-type {
         left: 440px;
@@ -584,7 +651,7 @@ footer .copyright p {
     /* about */
     
     .about-us .small-container > p + div {
-        padding: 50px 0;
+        padding: 25px 0;
     }
     .about-us .row > .col-lg-6:first-of-type {
         height: 350px;
