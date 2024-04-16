@@ -192,8 +192,8 @@ header button:hover a {
 }
 
 .modal-content {
-  background-color: #211f24 !important;
-  color: white;
+  background-color: #ffff !important;
+  color: black;
   margin: 5% auto;
   position: relative;
   padding: 20px;
@@ -276,14 +276,18 @@ header button:hover a {
 .modal-input-group {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px;
+}
+.radio-group {
+  display: inline-block;
+  margin-left: -10px;
 }
 
 .modal-input-group label {
   font-weight: bold;
   font-size: 1.3rem;
   padding-right: 30px;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 .modal-input-group input,
@@ -318,7 +322,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   display: inline-block;
   font-size: 0.8rem;
   /*   border:none; */
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 5px;
   background: transparent;
   padding: 10px 30px;
@@ -326,7 +330,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   font-weight: 500;
   margin-top: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   letter-spacing: 2px;
   text-decoration: none;
   transition: letter-spacing 0.2s ease-in;

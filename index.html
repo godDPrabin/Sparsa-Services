@@ -181,18 +181,24 @@
           <div class="modal-input-group">
             <fieldset>
               <legend>Payment Method</legend>
-              <label
-                ><input type="radio" name="payment" value="bank" required />
-                Bank Transfer</label
-              ><br />
-              <label
-                ><input type="radio" name="payment" value="cash" /> Cash
-                Money</label
-              ><br />
-              <label
-                ><input type="radio" name="payment" value="other" />
-                Other</label
-              >
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="bank"
+                  id="bank"
+                  required
+                />
+                <label for="bank">Bank Transfer</label>
+              </div>
+              <div class="radio-group">
+                <input type="radio" name="payment" value="cash" id="cash" />
+                <label for="cash">Cash Money</label>
+              </div>
+              <div class="radio-group">
+                <input type="radio" name="payment" value="other" id="other" />
+                <label for="other">Other</label>
+              </div>
             </fieldset>
           </div>
 
@@ -200,18 +206,34 @@
           <div class="modal-input-group">
             <fieldset>
               <legend>How did you hear about us?</legend>
-              <label
-                ><input type="radio" name="referral" value="friend" required />
-                Referred by friend</label
-              ><br />
-              <label
-                ><input type="radio" name="referral" value="social" /> Social
-                media platforms</label
-              ><br />
-              <label
-                ><input type="radio" name="referral" value="other" />
-                Other</label
-              >
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  name="referral"
+                  value="friend"
+                  id="friend"
+                  required
+                />
+                <label for="friend">Referred by friend</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  name="referral"
+                  value="social"
+                  id="social"
+                />
+                <label for="social">Social media</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  name="referral"
+                  value="other"
+                  id="other-referral"
+                />
+                <label for="other-referral">Other</label>
+              </div>
             </fieldset>
           </div>
 
@@ -228,9 +250,7 @@
           </div>
 
           <div class="modal-button-group">
-            <button type="button" id="nextBtn" class="modal-button">
-              Submit
-            </button>
+            <button type="next" id="nextpage" class="modal-button">next</button>
             <button type="reset" id="reset" class="modal-button">Reset</button>
           </div>
 
