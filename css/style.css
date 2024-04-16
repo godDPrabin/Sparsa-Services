@@ -1,8 +1,11 @@
+html,body{
+  overflow-x: hidden;
+  /* overflow-y: auto; */
+}
 * {
   margin: 0;
   padding: 0;
   scrollbar-width: thin;
-  scroll-behavior: smooth;
 }
 
 header {
@@ -60,7 +63,9 @@ body {
   font-size: 1.1rem;
 }
 
-/* navbar */
+/*======================================================
+                    Navbar 
+======================================================*/
 
 nav.navbar {
   position: absolute;
@@ -90,7 +95,10 @@ nav.navbar ul li {
   padding: 0 15px;
 }
 
-/* header */
+
+/*======================================================
+                    Header 
+======================================================*/
 
 header {
   position: relative;
@@ -166,22 +174,28 @@ header button:hover a {
     bottom: 20px;
     right: 10px;
     padding: 15px;
-    background-color: red;
+    background-color: #bd8cbf;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    box-shadow: 5px 5px 10px #d2cfcf, -5px -5px 10px #d2cfcf;
+    box-shadow:  -2px 2px 10px #5d5959;
     z-index: 10000;
+  }
+  
+  .call-us-btn:hover{
+    background:#d62bcf;
   }
   
   .call-us-btn i {
     color: white;
     font-size: 24px;
   }
-/* about us */
 
+/*======================================================
+                    About Us 
+======================================================*/
 .about-us {
   position: relative;
   padding: 100px 0;
@@ -310,7 +324,10 @@ header button:hover a {
   padding: 5px;
 }
 
-/* services */
+
+/*======================================================
+                    Services
+======================================================*/
 
 .services {
   margin-bottom: 100px;
@@ -328,8 +345,9 @@ header button:hover a {
 }
 
 .services .carousel-inner img {
-  height: 100%;
-  width: 100%;
+  height: 600px;
+  width: 500px;
+  object-fit:contain;
 }
 
 .services .carousel-control-next,
@@ -361,7 +379,9 @@ header button:hover a {
   color: #bd8cbf;
 }
 
-/* Plans */
+/*======================================================
+                   Plans 
+======================================================*/
 
 .plans {
   font-family: "Open Sans", sans-serif;
@@ -369,7 +389,8 @@ header button:hover a {
 }
 
 .containeer {
-  width: 460px;
+  max-width: 400px;
+  width: 100%;
   padding: 40px;
   background: #ffffff;
   text-align: center;
@@ -443,7 +464,9 @@ header button:hover a {
   top: 29%;
 }
 
-/* statistics */
+/*======================================================
+                    Stattistics
+======================================================*/
 
 .statistics {
   padding: 50px 0;
@@ -465,7 +488,9 @@ header button:hover a {
   margin-bottom: 0;
 }
 
-/* contact */
+/*======================================================
+                    Contact us 
+======================================================*/
 
 .contact {
   background-image: url("../imgs/contact.jpg");
@@ -519,7 +544,9 @@ header button:hover a {
   background-color: #d62bcf;
 }
 
-/* footer */
+/*======================================================
+                    Footer
+======================================================*/
 
 footer,
 footer a {
@@ -621,7 +648,11 @@ footer .copyright p {
   font-size: 16px;
 }
 
-/* media queries */
+
+
+/*======================================================
+                   Media Queries
+======================================================*/
 
 @media (max-width: 1200px) {
   /* about */
@@ -665,24 +696,6 @@ footer .copyright p {
   .book-now {
     position: fixed;
     right: calc(100% - 103vw);
-  }
-  /* agency */
-
-  .agency img:first-of-type,
-  .agency img:last-of-type {
-    width: 150px;
-  }
-  .agency .container > div > div img {
-    max-width: 400px;
-    width: 100%;
-  }
-  .agency .container > div h2 {
-    bottom: 87px;
-    left: 164px;
-    font-size: 30px;
-  }
-  .agency .container > div h2 {
-    display: none;
   }
 }
 
@@ -731,19 +744,6 @@ footer .copyright p {
     height: 50px;
   }
 
-  /* agency */
-
-  .agency img:first-of-type,
-  .agency img:last-of-type {
-    display: none;
-  }
-  .agency .container > div > div img {
-    display: block;
-  }
-  .agency .container > div {
-    width: 56%;
-  }
-
   /* statistics */
 
   .statistics .col-lg-3 {
@@ -785,10 +785,9 @@ footer .copyright p {
   .services .carousel-control-prev {
     display: none;
   }
-
-  /* agency */
-
-  .agency .container > div {
-    width: 87%;
-  }
+  
+.book-now {
+  position: fixed;
+  right: calc(100% - 109vw);
+}
 }
