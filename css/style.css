@@ -2,6 +2,11 @@ html,body{
   overflow-x: hidden;
   /* overflow-y: auto; */
 }
+
+body.modal-open {
+  overflow: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -145,7 +150,7 @@ header button:hover a {
   color: white;
 }
 
-.book-now {
+#side-btn {
   position: fixed;
   right: calc(100% - 101.5vw);
   top: 50%;
@@ -159,12 +164,187 @@ header button:hover a {
   z-index: 1000;
 }
 
-.book-now:hover {
+#side-btn:hover {
     background-color: #987099;
     color: #fff;
     border: 1px solid #987099;
   }
 
+
+/*======================================================
+                     Modal Form
+======================================================*/
+
+.modal {
+  visibility: hidden;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto !important;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+}
+
+.modal-content {
+  background-color: #211f24 !important;
+  color: white;
+  margin: 5% auto;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 700px;
+  overflow-y: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.modal-content .closes {
+  color: #aaa !important;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
+
+.closes:hover,
+.closes:focus {
+  color: white !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content .header-section .title {
+  position: relative;
+  margin-bottom: 40px;
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.modal-content .header-section .title:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 1px;
+  background-color: #bd8cbf;
+}
+
+.modal-content .header-section .title:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 3px;
+  background-color: #bd8cbf;
+}
+
+.modal-content .header-section .title span {
+  color: #bd8cbf;
+}
+
+/* Modal Form */
+.modal-form {
+  display: flex;
+  max-width: 700px !important;
+  z-index: 9999;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.modal-input-group label {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+
+.modal-input-group input,
+.modal-input-group select,
+.modal-input-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
+.modal-content select {
+  color: #000;
+  background-color: #fff;
+}
+
+.modal-button-group {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.modal-button-group button {
+  display: inline-block;
+  font-size: 0.8rem;
+  /*   border:none; */
+  border: 1px solid white;
+  border-radius: 5px;
+  background: transparent;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: letter-spacing 0.2s ease-in;
+}
+
+.modal-button-group button:hover {
+  letter-spacing: 6px;
+  color: #bd8cbf;
+  border:1px solid #bd8cbf !important;
+}
+
+#rules, #nextBtn {
+  display: none;
+}
+
+.invalid {
+  border: 1px solid red;
+}
 
 /*======================================================
                     Call Us 
@@ -425,7 +605,7 @@ header button:hover a {
   font-size: 1rem;
   margin-top: 25px;
 }
-.subscribe-button {
+#subscribe-button {
   display: inline-block;
   padding: 15px 0;
   background: transparent;
@@ -439,7 +619,7 @@ header button:hover a {
   font-weight: 500;
   transition: 0.2s ease;
 }
-.subscribe-button:hover {
+#subscribe-button:hover {
   color: #fff;
   background-color: #bd8cbf;
 }
@@ -693,7 +873,7 @@ footer .copyright p {
   .about-us .row > div > .item:nth-of-type(3) p {
     display: none;
   }
-  .book-now {
+  #side-btn {
     position: fixed;
     right: calc(100% - 103vw);
   }
@@ -786,7 +966,7 @@ footer .copyright p {
     display: none;
   }
   
-.book-now {
+#side-btn {
   position: fixed;
   right: calc(100% - 109vw);
 }

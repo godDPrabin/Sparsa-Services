@@ -17,7 +17,8 @@ $(function () {
     });
   });
   
-// Call Us ========================================
+
+  // Call Us ========================================
 document.addEventListener('DOMContentLoaded', function() {
     var callButton = document.querySelector('.call-us-btn');
     callButton.addEventListener('click', function(event) {
@@ -30,3 +31,36 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+
+// Book Now ========================================
+var modal = document.getElementById("myModal");
+document.addEventListener("DOMContentLoaded", function() {
+var btnss = document.getElementsByClassName("booknow");
+var span = document.querySelector(".closes");
+
+// When the user clicks on any button, open the modal
+for (var i = 0; i < btnss.length; i++) {
+  btnss[i].onclick = function () {
+    modal.style.display = "block";
+    setTimeout(function () {
+      modal.classList.add("show");
+    }, 50);
+  };
+}
+// If user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+};
+});
+// Close the modal
+function closeModal() {
+  modal.classList.remove("show");
+  setTimeout(function () {
+    modal.style.display = "none";
+  }, 500);
+}
+
+  
