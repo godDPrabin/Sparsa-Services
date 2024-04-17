@@ -81,6 +81,9 @@ nav.navbar {
   z-index: 1000;
   font-family: "Open Sans", sans-serif;
 }
+button.navbar-toggler .navbar-toggler-icon {
+  filter: invert(1);
+}
 
 nav.navbar a,
 nav.navbar ul li a {
