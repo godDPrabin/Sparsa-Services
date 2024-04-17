@@ -35,32 +35,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Book Now ========================================
 var modal = document.getElementById("myModal");
-document.addEventListener("DOMContentLoaded", function() {
-var btnss = document.getElementsByClassName("booknow");
-var span = document.querySelector(".closes");
+var form = document.getElementById("main_contact_form");
+var nextPageButton = document.getElementById("nextpage");
+var previousPageButton = document.getElementById("previouspage");
+var rulesPage = document.getElementById("rules-page");
 
 // When the user clicks on any button, open the modal
-for (var i = 0; i < btnss.length; i++) {
-  btnss[i].onclick = function () {
-    modal.style.display = "block";
-    setTimeout(function () {
-      modal.classList.add("show");
-    }, 50);
-  };
-}
-// If user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    closeModal();
+document.addEventListener("DOMContentLoaded", function() {
+  var btnss = document.getElementsByClassName("booknow");
+  var span = document.querySelector(".closes");
+
+  for (var i = 0; i < btnss.length; i++) {
+    btnss[i].onclick = function () {
+      modal.style.display = "block";
+      setTimeout(function () {
+        modal.classList.add("show");
+      }, 50);
+    };
   }
-};
+
+  // If user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  };
+
+  // Form validation on blur
+  var inputs = form.querySelectorAll("input, textarea, select");
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("blur", function () {
+      if (!this.checkValidity()) {
+        this.classList.add("invalid");
+      } else {
+        this.classList.remove("invalid");
+      }
+    });
+  }
+
+  // Validate form and proceed to rules page
+  nextPageButton.addEventListener("click", function() {
+    if (form.checkValidity()) {
+      form.style.display = "none";
+      rulesPage.style.display = "block";
+    } else {
+      // Show error message or handle invalid form
+      alert("Please fill out all fields correctly.");
+    }
+  });
+
+  // Show form and hide rules page
+  previousPageButton.addEventListener("click", function() {
+    rulesPage.style.display = "none";
+    form.style.display = "block";
+  });
 });
-// Close the modal
+
+// Close modal
 function closeModal() {
   modal.classList.remove("show");
   setTimeout(function () {
     modal.style.display = "none";
+    form.style.display = "block"; // Show form if it was hidden
+    rulesPage.style.display = "none"; // Hide rules page if it was shown
   }, 500);
 }
+
+
 
   
