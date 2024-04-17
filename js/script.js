@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Prevent default 'tel:' link behavior
         event.preventDefault();
         // Display the number in an alert or any other way you prefer
-        alert('Call us at: 61-488-900-468');
+        alert('Call us at: 0452549408');
       }
     });
   });
