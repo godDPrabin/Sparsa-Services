@@ -1,0 +1,677 @@
+    <!-- The Form Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="header-section">
+            <h2 class="title">Tour<span> Reservation</span></h2>
+          </div>
+          <form id="main_contact_form" class="modal-form" method="post">
+            <div class="modal-input-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="province">Province/State:</label>
+              <input
+                type="text"
+                id="province"
+                name="province"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="zip">ZIP Code:</label>
+              <input type="text" id="zip" name="zip" required /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="pickup">Pickup Date and Time:</label>
+              <input
+                type="datetime-local"
+                id="pickup"
+                name="pickup"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="pickupLocation">Pickup Location:</label>
+              <input
+                type="text"
+                id="pickupLocation"
+                name="pickupLocation"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="dropoff">Drop Off Date and Time:</label>
+              <input
+                type="datetime-local"
+                id="dropoff"
+                name="dropoff"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="dropoffLocation">Drop Off Location:</label>
+              <input
+                type="text"
+                id="dropoffLocation"
+                name="dropoffLocation"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="guests">Total Number of Guests:</label>
+              <input
+                type="number"
+                id="guests"
+                name="guests"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="femaleGuests">Number of Female Guests:</label>
+              <input
+                type="number"
+                id="femaleGuests"
+                name="femaleGuests"
+                required
+              /><br /><br />
+            </div>
+  
+            <div class="modal-input-group">
+              <label for="maleGuests">Number of Male Guests:</label>
+              <input
+                type="number"
+                id="maleGuests"
+                name="maleGuests"
+                required
+              /><br /><br />
+            </div>
+  
+            <!-- Payment Method Section -->
+            <div class="modal-input-group">
+              <fieldset>
+                <legend>Payment Method</legend>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="bank"
+                    id="bank"
+                    required
+                  />
+                  <label for="bank">Bank Transfer</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" name="payment" value="cash" id="cash" />
+                  <label for="cash">Cash Money</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" name="payment" value="other" id="other" />
+                  <label for="other">Other</label>
+                </div>
+              </fieldset>
+            </div>
+  
+            <!-- How did you hear about us Section -->
+            <div class="modal-input-group">
+              <fieldset>
+                <legend>How did you hear about us?</legend>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    name="referral"
+                    value="friend"
+                    id="friend"
+                    required
+                  />
+                  <label for="friend">Referred by friend</label>
+                </div>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    name="referral"
+                    value="social"
+                    id="social"
+                  />
+                  <label for="social">Social media</label>
+                </div>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    name="referral"
+                    value="other"
+                    id="other-referral"
+                  />
+                  <label for="other-referral">Other</label>
+                </div>
+              </fieldset>
+            </div>
+  
+            <!-- Special Request Section -->
+            <div class="modal-input-group">
+              <label for="specialRequest">Any Special Request?</label><br />
+              <textarea
+                id="specialRequest"
+                name="specialRequest"
+                rows="4"
+                cols="50"
+              ></textarea
+              ><br />
+            </div>
+  
+            <div class="modal-button-group">
+              <button type="button" id="nextpage" class="modal-button">
+                next
+              </button>
+              <button type="reset" id="reset" class="modal-button">Reset</button>
+            </div>
+  
+            <!-- Formsubmit tools -->
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="New Booking" />
+            <input type="hidden" name="_captcha" value="false" />
+  
+            <!-- Submitting.... -->
+            <div id="submit" style="color: rgb(255, 255, 255); display: none">
+              🔄 Submitting...
+            </div>
+            <!-- success message -->
+            <div id="success" style="color: rgb(5, 212, 5); display: none">
+              ✅ Sent Successful
+            </div>
+            <!-- error message -->
+            <div id="error-msg" style="color: red; display: none">
+              ❌ Something went wrong
+            </div>
+          </form>
+  
+          <div id="rules-page" style="display: none">
+            <h2>Tour to Snowy Mountains - Rules and Policies</h2>
+            <h5></h5>
+              <i
+                ><b><u>For Groups of More Than 10 :</u></b></i
+              >
+            </h5>
+            <p>
+              We provide a separate vehicle with the friendliest driver
+              exclusively for your group if you have more than 10 people.
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Joining with Different Groups :</u></b></i
+              >
+            </h5>
+            <p>
+              If you are traveling alone or have a group of less than 10 people,
+              you may need to join with different groups for the tour.
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Inclusive Price :</u></b></i
+              >
+            </h5>
+            <p>
+              Our tour price includes all vehicle-related costs such as the
+              vehicle itself, fuel, parking fees, and chains. <br />
+              Additionally, the price covers accommodation fees, National Park
+              Entry Ticket fees, and other relevant expenses. <br />
+              Please note that food is not included in the package.
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Renting Snow Gear :</u></b></i
+              >
+            </h5>
+            <p>
+              Leave your bulky snow clothes behind; we've got you covered with
+              rentals! <br />
+              Rent jackets, pants, helmets, skis, snowboards, toboggans, snow
+              glasses, and more.
+              <br />Enjoy affordable rental prices, and we'll help you find the
+              best deals by connecting you with gear owners. <br />
+              Please note that rental costs are not included in the tour package.
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Snow Gloves :</u></b></i
+              >
+            </h5>
+            <p>
+              You can bring your own snow gloves if you have them. If not, we can
+              also help you purchase them before the trip.
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Barbecues and Firewood :</u></b></i
+              >
+            </h5>
+            <p>
+              During your one-night stay at the Resort, you can enjoy a delightful
+              evening with barbecues and the warmth of firewood.
+              <br />If you like, you can bring your own barbecues for the
+              experience.
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Dinner at the Resort :</u></b></i
+              >
+            </h5>
+            <p>
+              Dinner at the resort is available, but the cost is not included in
+              the package.
+              <br /><mark style="color: red">
+                You are responsible for paying for dinner yourself.
+              </mark>
+            </p>
+  
+            <h5>
+              <i
+                ><b><u>Contact Information :</u></b></i
+              >
+            </h5>
+            <p>
+              If you need more information or have any questions, feel free to
+              reach out to us at any time by calling <b>0452-549-408</b>. <br />We
+              hope you have a fantastic and memorable tour to the snowy mountains
+              with us! If you have any further inquiries, don't hesitate to
+              contact us.
+            </p>
+            <div class="modal-button-group">
+              <button type="button" id="previouspage" class="modal-button">
+                Previous
+              </button>
+              <button type="submit" id="final-submit" class="modal-button">
+                Submit
+              </button>
+            </div>
+          </div>
+  
+          <span class="closes" onclick="closeModal()">&times;</span>
+        </div>
+      </div>
+
+
+
+    <script>
+        // Form Submit ========================================
+        //use ajax to submit form to https://formsubmit.co/1b224686853bcc5a46e1616e3cbc7abf
+        document.addEventListener("DOMContentLoaded", function () {
+    var formSubmitted = false;
+  
+    // Function to validate email
+    function validateEmail(email) {
+      var re =
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+  
+    // Function to validate name
+    function validateName(name) {
+      var re = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+      return re.test(String(name).trim());
+    }
+  
+    // Function to validate number
+    function validateNumber(number) {
+      var re = /^\d{8,12}$/;
+      return re.test(number);
+    }
+  
+    $(".modal-form").submit(function (e) {
+      e.preventDefault();
+      var form = $(this);
+      var formData = form.serializeArray();
+      var data = {};
+      formData.forEach(function (item) {
+        data[item.name] = item.value;
+      });
+  
+      // Validate email
+      if (!validateEmail(data.email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+  
+      // Validate name
+      if (!validateName(data.name)) {
+        alert("Please enter a valid name.");
+        return false;
+      }
+  
+      // Validate number
+      if (!validateNumber(data.phone)) {
+        alert("Please enter a valid number.");
+        return false;
+      }
+  
+      // If all validations pass and form is not yet submitted, proceed with AJAX submission
+      if (!formSubmitted) {
+        $("#success").css("display", "none");
+        $("#error-msg").css("display", "none");
+        $("#submit").css("display", "block");
+        $.ajax({
+          type: "POST",
+          url: "https://formsubmit.co/085db8774cc017093870bd2b2374cae5",
+          data: formData,
+          success: function () {
+            $("#submit").css("display", "none");
+            $("#success").css("display", "block");
+            alert("Thank you for your submission!");
+            window.location.href = "index.html"; 
+            form.reset();
+          },
+          error: function (xhr, status, error) {
+            $("#submit").css("display", "none");
+            $("#error-msg").css("display", "block");
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again later.");
+            form.reset();
+          },
+        });
+        formSubmitted = true; // Set formSubmitted to true to prevent duplicate submissions
+      }
+    });
+  
+    // Event listener for final submit button
+    document.getElementById('final-submit').addEventListener('click', function() {
+      $(".modal-form").submit(); // Trigger form submission
+    });
+  });
+  
+      </script>
+
+
+
+<!-- JS file wala Script -->
+<script>
+    // Book Now ========================================
+var modal = document.getElementById("myModal");
+var form = document.getElementById("main_contact_form");
+var nextPageButton = document.getElementById("nextpage");
+var previousPageButton = document.getElementById("previouspage");
+var rulesPage = document.getElementById("rules-page");
+
+// When the user clicks on any button, open the modal
+document.addEventListener("DOMContentLoaded", function() {
+  var btnss = document.getElementsByClassName("booknow");
+  var span = document.querySelector(".closes");
+
+  for (var i = 0; i < btnss.length; i++) {
+    btnss[i].onclick = function () {
+      modal.style.display = "block";
+      setTimeout(function () {
+        modal.classList.add("show");
+      }, 50);
+    };
+  }
+
+  // If user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  };
+
+  // Form validation on blur
+  var inputs = form.querySelectorAll("input, textarea, select");
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("blur", function () {
+      if (!this.checkValidity()) {
+        this.classList.add("invalid");
+      } else {
+        this.classList.remove("invalid");
+      }
+    });
+  }
+
+  // Validate form and proceed to rules page
+  nextPageButton.addEventListener("click", function() {
+    if (form.checkValidity()) {
+      form.style.display = "none";
+      rulesPage.style.display = "block";
+    } else {
+      // Show error message or handle invalid form
+      alert("Please fill out all fields correctly.");
+    }
+  });
+
+  // Show form and hide rules page
+  previousPageButton.addEventListener("click", function() {
+    rulesPage.style.display = "none";
+    form.style.display = "block";
+  });
+});
+
+// Close modal
+function closeModal() {
+  modal.classList.remove("show");
+  setTimeout(function () {
+    modal.style.display = "none";
+    form.style.display = "block"; // Show form if it was hidden
+    rulesPage.style.display = "none"; // Hide rules page if it was shown
+  }, 500);
+}
+
+</script>
+
+
+
+
+
+<!-- css -->
+
+<style>
+  /*======================================================
+                     Modal Form
+======================================================*/
+
+.modal {
+  visibility: hidden;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto !important;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+}
+
+.modal-content {
+  background-color: #ffff !important;
+  color: black;
+  margin: 5% auto;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 700px;
+  overflow-y: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.modal-content .closes {
+  color: #aaa !important;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
+
+.closes:hover,
+.closes:focus {
+  color: white !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content .header-section .title {
+  position: relative;
+  margin-bottom: 40px;
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.modal-content .header-section .title:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 1px;
+  background-color: #bd8cbf;
+}
+
+.modal-content .header-section .title:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 3px;
+  background-color: #bd8cbf;
+}
+
+.modal-content .header-section .title span {
+  color: #bd8cbf;
+}
+
+  /* Modal Form */
+  .modal-form {
+  display: flex;
+  max-width: 700px !important;
+  z-index: 9999;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.radio-group {
+  display: inline-block;
+  margin-left: -10px;
+}
+
+.modal-input-group label {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-right: 30px;
+  /* padding-bottom: 10px; */
+}
+
+.modal-input-group input,
+.modal-input-group select,
+.modal-input-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
+.modal-content select {
+  color: #000;
+  background-color: #fff;
+}
+
+.modal-button-group {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.modal-button-group button {
+  display: inline-block;
+  font-size: 0.8rem;
+  /*   border:none; */
+  border: 1px solid black;
+  border-radius: 5px;
+  background: transparent;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: letter-spacing 0.2s ease-in;
+}
+
+.modal-button-group button:hover {
+  letter-spacing: 6px;
+  color: #bd8cbf;
+  border:1px solid #bd8cbf !important;
+}
+
+#rules, #nextBtn {
+  display: none;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+</style>
