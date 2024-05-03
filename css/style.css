@@ -538,9 +538,10 @@ header button:hover a {
   margin-bottom: 30px;
 }
 
-.contact form input[type="submit"] {
+.contactsubmit {
   width: 130px;
   height: 40px;
+  border:none;
   padding: 0;
   line-height: 40px;
   background-color: #ef44f8;
@@ -551,7 +552,7 @@ header button:hover a {
   transition: background-color 0.3s ease;
 }
 
-.contact form input[type="submit"]:hover {
+.contactsubmit:hover {
   background-color: #d62bcf;
 }
 
