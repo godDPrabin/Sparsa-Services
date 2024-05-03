@@ -18,20 +18,22 @@ $(function () {
   });
   
 
-  // Call Us ========================================
-document.addEventListener('DOMContentLoaded', function() {
-    var callButton = document.querySelector('.call-us-btn');
-    callButton.addEventListener('click', function(event) {
-      // Check if the device is not a phone
-      if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-        // Prevent default 'tel:' link behavior
-        event.preventDefault();
-        // Display the number in an alert or any other way you prefer
-        alert('Call us at: 0452549408');
-      }
-    });
-  });
 
+// Call Us ========================================
+document.addEventListener('DOMContentLoaded', function() {
+  var callButton = document.querySelector('.call-us-btn');
+  callButton.addEventListener('click', function(event) {
+    // Check if the device is a phone
+    if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
+      // Open WhatsApp application on phone
+      window.open('whatsapp://send?phone=0452549408');
+    } else {
+      // Redirect to WhatsApp Web on PC
+      window.open('https://web.whatsapp.com/send?phone=0452549408');
+      event.preventDefault();
+    }
+  });
+});
 
 
 
